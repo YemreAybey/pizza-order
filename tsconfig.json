@@ -1,0 +1,49 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"target": "ES2017",
+		"module": "CommonJS",
+		"esModuleInterop": true,
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"allowJs": true,
+		"checkJs": false,
+		"jsx": "react",
+		"sourceMap": true,
+		"outDir": "./ts",
+		"rootDir": ".",
+		"alwaysStrict": true,
+		"downlevelIteration": true,
+		"noUnusedLocals": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noStrictGenericChecks": true,
+		"moduleResolution": "node",
+		"paths": {
+			"@src/*": ["src/*"],
+			"@public/*": ["public/*"]
+		},
+		"types": ["react", "node", "jest"],
+		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true
+	},
+	"include": ["src", "**/*.d.ts", "**/*.config.js", "**/src/**/*.ts", "**/src/**/*.js"],
+	"exclude": ["node_modules"]
+}
+
+// {
+//     "compilerOptions": {
+//       "lib": ["dom", "dom.iterable", "esnext"],
+//       "allowJs": true,
+//       "allowSyntheticDefaultImports": true,
+//       "skipLibCheck": true,
+//       "esModuleInterop": true,
+//       "strict": true,
+//       "forceConsistentCasingInFileNames": true,
+//       "moduleResolution": "node",
+//       "resolveJsonModule": true,
+//       "isolatedModules": true,
+//       "noEmit": true,
+//       "jsx": "react"
+//     },
+//     "include": ["src"]
+//   }
