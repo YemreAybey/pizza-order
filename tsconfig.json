@@ -26,7 +26,7 @@
 		"allowSyntheticDefaultImports": true,
 		"resolveJsonModule": true
 	},
-	"include": ["src", "**/*.d.ts", "**/*.config.js", "**/src/**/*.ts", "**/src/**/*.js"],
+	"include": ["src", "**/*.d.ts", "**/*.config.ts", "**/src/**/*.ts", "**/src/**/*.js"],
 	"exclude": ["node_modules"]
 }
 

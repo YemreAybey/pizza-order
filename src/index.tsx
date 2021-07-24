@@ -1,11 +1,27 @@
+import App from '@src/app';
+import { store } from '@src/store';
+import { THEME, GlobalStyle } from '@src/theme';
+import { history } from '@src/utils/history';
+import { ConnectedRouter } from 'connected-react-router';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { injectStyle } from 'react-toastify/dist/inject-style';
+import { ThemeProvider } from 'styled-components';
 
-const App = () => <h1>Initial TS, Typescript, ESlint, Husky, jest setup</h1>;
+/**
+ * This is used because of a problem of this library with css loader.
+ */
+injectStyle();
 
 ReactDOM.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
+	<Provider store={store}>
+		<ConnectedRouter history={history}>
+			<ThemeProvider theme={THEME}>
+				<GlobalStyle />
+				<App />
+			</ThemeProvider>
+		</ConnectedRouter>
+	</Provider>,
 	document.getElementById('root'),
 );

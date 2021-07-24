@@ -1,8 +1,8 @@
 import path from 'path';
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpack from 'webpack';
 
 const config = {
 	mode: 'development',
@@ -43,8 +43,7 @@ const config = {
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js'],
 		alias: {
-			'@src': path.resolve(__dirname, '../../src/'),
-			'@public': path.resolve(__dirname, '../../public/'),
+			'@src': path.resolve(__dirname, './src/'),
 		},
 	},
 	plugins: [
