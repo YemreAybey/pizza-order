@@ -16,14 +16,6 @@ export const THEME: DefaultTheme = {
 		xLarge: '30px',
 		x3Large: '50px',
 	},
-	radius: {
-		wide: '12px',
-		normal: '8px',
-		small: '2px',
-	},
-	fontFamily: {
-		main: '"Open Sans", sans-serif;',
-	},
 	timeIndicator: {
 		borderRadius: '2px',
 		height: '5px',
@@ -76,6 +68,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+	display: grid;
+	place-items: center;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     overflow-x: hidden;

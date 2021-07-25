@@ -25,6 +25,7 @@
   "dependencies": {
     "card-validator": "^8.1.1",
     "connected-react-router": "^6.9.1",
+    "dotenv-webpack": "^7.0.3",
     "formik": "^2.2.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -66,6 +67,7 @@
     "babel-plugin-styled-components": "^1.13.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^6.2.0",
+    "dotenv": "^10.0.0",
     "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-babel": "^5.3.1",

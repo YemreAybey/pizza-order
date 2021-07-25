@@ -1,4 +1,7 @@
 import { AnyOrderAction, ORDER_ACTION_TYPES } from '@src/redux/actions';
+import { history } from '@src/utils/history';
+import { connectRouter, RouterState } from 'connected-react-router';
+import { CombinedState, combineReducers, Reducer } from 'redux';
 
 enum PENDING_STATUSES {
 	IDLE = 'idle',
@@ -31,4 +34,17 @@ const orderReducer = (state: Readonly<IOrderState> = initialState, action: AnyOr
 	}
 };
 
-export default orderReducer;
+export interface IGlobalState {
+	ORDER: IOrderState;
+	router: RouterState;
+}
+
+/**
+ * Merges the main reducer with the router state and dynamically injected reducers
+ */
+export const createReducer = (injectedReducers: Record<string, Reducer<keyof IGlobalState>> = {}): Reducer<CombinedState<IGlobalState>> =>
+	combineReducers<IGlobalState>({
+		router: connectRouter(history),
+		ORDER: orderReducer,
+		...injectedReducers,
+	});

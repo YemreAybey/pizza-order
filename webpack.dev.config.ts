@@ -1,4 +1,5 @@
 import path from 'path';
+import Dotenv from 'dotenv-webpack';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -47,6 +48,10 @@ const config = {
 		},
 	},
 	plugins: [
+		new Dotenv({
+			path: './.env', // Path to .env file (this is the default)
+			safe: true, // load .env.example (defaults to "false" which does not use dotenv-safe)
+		}),
 		new HtmlWebpackPlugin({
 			template: 'src/index.html',
 		}),

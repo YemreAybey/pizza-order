@@ -1,5 +1,6 @@
 import { toast } from 'react-toastify';
-import { takeLatest, delay, put } from 'redux-saga/effects';
+import { takeLatest, delay, put, all, fork } from 'redux-saga/effects';
+
 import { IPlaceOrderAction, ORDER_ACTION_TYPES, togglePendingStatus } from '../actions';
 
 function* placeOrderSaga(action: IPlaceOrderAction) {
@@ -13,6 +14,10 @@ function* placeOrderSaga(action: IPlaceOrderAction) {
 	}
 }
 
-export default function* mySaga(): Generator {
+function* mySaga(): Generator {
 	yield takeLatest(ORDER_ACTION_TYPES.PLACE_ORDER, placeOrderSaga);
+}
+
+export default function* rootSaga(): Generator {
+	yield all([fork(mySaga)]);
 }

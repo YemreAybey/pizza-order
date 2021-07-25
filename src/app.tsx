@@ -1,4 +1,8 @@
+import Order from '@src/pages/Order';
+import PizzaSelection from '@src/pages/PizzaSelection/';
+import { MAIN_ROUTES } from '@src/shared/enums';
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
 type AppProps = {
@@ -9,6 +13,10 @@ const App: React.FC<AppProps> = () => {
 	return (
 		<div>
 			<ToastContainer autoClose={3000} />
+			<Switch>
+				<Route exact component={PizzaSelection} path={MAIN_ROUTES.PIZZA_SELECTION} />
+				<Route exact component={Order} path={MAIN_ROUTES.ORDER} />
+			</Switch>
 		</div>
 	);
 };

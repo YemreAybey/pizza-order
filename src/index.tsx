@@ -1,5 +1,5 @@
 import App from '@src/app';
-import { store } from '@src/store';
+import configureStore from '@src/store';
 import { THEME, GlobalStyle } from '@src/theme';
 import { history } from '@src/utils/history';
 import { ConnectedRouter } from 'connected-react-router';
@@ -13,6 +13,9 @@ import { ThemeProvider } from 'styled-components';
  * This is used because of a problem of this library with css loader.
  */
 injectStyle();
+
+const initialState = {};
+const store = configureStore(initialState, history);
 
 ReactDOM.render(
 	<Provider store={store}>
