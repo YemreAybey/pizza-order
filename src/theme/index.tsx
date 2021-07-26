@@ -73,6 +73,9 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     overflow-x: hidden;
+	min-width: 100vw;
+	min-height: 100vh;
+	background-color: #f8f5fb;
     h1, h2, h3, h4, h5, h6{
         margin-bottom:0; 
     }

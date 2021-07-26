@@ -30,6 +30,10 @@ const config: webpack.Configuration = {
 				exclude: /node_modules/,
 				use: ['style-loader', 'css-loader'],
 			},
+			{
+				test: /\.(s(a|c)ss)$/,
+				use: ['style-loader', 'css-loader', 'sass-loader'],
+			},
 
 			{
 				test: /\.(eot|otf|ttf|woff|woff2|pdf|mp3)$/,

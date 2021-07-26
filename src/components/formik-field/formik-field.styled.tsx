@@ -6,7 +6,7 @@ export const FormFieldContainer: StyledComponent<'div', any, Record<string, unkn
 	display: 'flex',
 	flexDirection: 'column',
 	width: '100%',
-	color: `1px solid ${props.theme.colors.lightGray}`,
+	color: `${props.theme.colors.darkBlue}`,
 }));
 
 export const FormField = styled(Field)(props => ({

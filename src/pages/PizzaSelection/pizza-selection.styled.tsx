@@ -14,18 +14,30 @@ export const FormRow = styled.div`
 	justify-content: space-around;
 `;
 
-export const FormGeneralContainer = styled.div`
+export const FormGeneralContainer = styled.div<{ gap?: string }>`
 	background: ${({ theme }) => theme.colors.white};
 	box-shadow: 4px 4px 30px rgba(206, 206, 206, 0.25);
 	border-radius: 8px;
-	max-width: 700px;
+	width: 700px;
 	padding: 24px;
 	display: grid;
-	gap: 12px;
+	gap: ${({ gap }) => gap || '12px'};
 	${({ theme }) => theme.mediaQueries.tablet} {
 		padding: 16px;
+		max-width: 700px;
+		width: 100%;
 	}
 	${({ theme }) => theme.mediaQueries.mobile} {
 		padding: 8px;
 	}
+`;
+
+export const FormRowGrid = styled.div`
+	display: grid;
+	gap: 24px;
+`;
+
+export const CenterGrid = styled.div`
+	display: grid;
+	place-items: center;
 `;

@@ -4,6 +4,10 @@ import Lazy from 'yup/lib/Lazy';
 
 export interface IPizzaSelectionForm {
 	pizzaType: string;
+	pepperoni: boolean;
+	peppers: boolean;
+	mashrooms: boolean;
+	olives: boolean;
 }
 
 export const CHOOSE_PIZZA_VALIDATION_SCHEMA: Lazy<AnySchema> = lazy(() =>
@@ -23,4 +27,8 @@ export const CHOOSE_PIZZA_VALIDATION_SCHEMA: Lazy<AnySchema> = lazy(() =>
 
 export const PIZZA_SELECTION_INITIAL_VALUES: IPizzaSelectionForm = {
 	pizzaType: 'small',
+	pepperoni: false,
+	peppers: false,
+	mashrooms: false,
+	olives: false,
 };

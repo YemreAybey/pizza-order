@@ -2,13 +2,15 @@ import { FormFieldContainer, FormField } from '@src/components/formik-field/form
 import { FieldInputProps } from 'formik';
 import React from 'react';
 
-interface IFormikFieldProps extends FieldInputProps<unknown> {
-	stretch: boolean;
-	title: string;
+interface IFormikFieldProps extends Partial<FieldInputProps<unknown>> {
+	stretch?: boolean;
+	title?: string;
 	errors: Record<string, unknown>;
-	touched: boolean;
+	touched: Record<string, unknown>;
 	name: string;
-	ml: string;
+	ml?: string;
+	placeholder?: string;
+	type?: string;
 }
 
 const FormikField = ({ stretch, title, errors, touched, name, ml, ...props }: IFormikFieldProps): JSX.Element => {
