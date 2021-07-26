@@ -17,7 +17,7 @@ A simple pizza order app
 
 ## Backend
 
-For the backend, I have used nodeJS and expressJS. You can see the node-api [on this link](https://github.com/YemreAybey/todo-api)
+There is no backend in this project.
 
 ## Built With
 
