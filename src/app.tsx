@@ -1,10 +1,10 @@
-import Order from '@src/pages/Order';
-import PizzaSelection from '@src/pages/PizzaSelection/';
+import { AdressPage } from '@src/pages/Adress/adress.lazy';
+import { OrderPage } from '@src/pages/Order/order.lazy';
+import { PizzaSelectionPage } from '@src/pages/PizzaSelection/pizza-selection.lazy';
 import { MAIN_ROUTES } from '@src/shared/enums';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import AdressPage from './pages/Adress';
 
 type AppProps = {
 	[k: string]: unknown;
@@ -15,9 +15,9 @@ const App: React.FC<AppProps> = () => {
 		<div>
 			<ToastContainer autoClose={3000} />
 			<Switch>
-				<Route exact component={PizzaSelection} path={MAIN_ROUTES.PIZZA_SELECTION} />
+				<Route exact component={PizzaSelectionPage} path={MAIN_ROUTES.PIZZA_SELECTION} />
 				<Route exact component={AdressPage} path={MAIN_ROUTES.ADRESS_PAGE} />
-				<Route exact component={Order} path={MAIN_ROUTES.ORDER} />
+				<Route exact component={OrderPage} path={MAIN_ROUTES.ORDER} />
 			</Switch>
 		</div>
 	);

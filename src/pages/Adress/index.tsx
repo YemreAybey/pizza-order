@@ -12,7 +12,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
 
-type AdressProps = {
+export type AdressProps = {
 	[k: string]: unknown;
 };
 

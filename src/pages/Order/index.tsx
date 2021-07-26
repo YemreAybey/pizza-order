@@ -18,7 +18,7 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { Dispatch } from 'redux';
 import { placeOrder } from './order.actions';
 
-type OrderProps = {
+export type OrderProps = {
 	[k: string]: unknown;
 };
 

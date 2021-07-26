@@ -21,15 +21,6 @@ export const ADRESS_VALIDATION_SCHEMA: Lazy<AnySchema> = lazy(() =>
 		houseNumber: number().nullable().required(ERROR_MESSAGES.required),
 		streetName: string().nullable().required(ERROR_MESSAGES.required),
 		phoneNumber: string().nullable().required(ERROR_MESSAGES.required),
-		// price: number()
-		// 	.typeError('Fiyat girişi yaparken kuruş bilgisini nokta (.) İle giriniz.')
-		// 	.nullable()
-		// 	.required(ERROR_MESSAGES.required)
-		// 	.test('decimalError', 'Lütfen noktadan sonra iki hane giriniz', (value: number) => {
-		// 		const numbers = `${value}`.split('.');
-
-		// 		return numbers.length < 2 || numbers[numbers.length - 1].length < 3;
-		// 	}),
 	}),
 );
 

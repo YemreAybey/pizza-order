@@ -15,15 +15,6 @@ export const CARD_VALIDATION_SCHEMA: Lazy<AnySchema> = lazy(() =>
 		expiryDate: string().nullable().required(ERROR_MESSAGES.required),
 		name: string().nullable().required(ERROR_MESSAGES.required),
 		cardNumber: string().nullable().required(ERROR_MESSAGES.required),
-		// price: number()
-		// 	.typeError('Fiyat girişi yaparken kuruş bilgisini nokta (.) İle giriniz.')
-		// 	.nullable()
-		// 	.required(ERROR_MESSAGES.required)
-		// 	.test('decimalError', 'Lütfen noktadan sonra iki hane giriniz', (value: number) => {
-		// 		const numbers = `${value}`.split('.');
-
-		// 		return numbers.length < 2 || numbers[numbers.length - 1].length < 3;
-		// 	}),
 	}),
 );
 

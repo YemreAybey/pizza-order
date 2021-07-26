@@ -15,7 +15,7 @@ import { Dispatch } from 'redux';
 import { IOrderState } from '../Order/order.reducer';
 import { CHOOSE_PIZZA_VALIDATION_SCHEMA, IPizzaSelectionForm, PIZZA_SELECTION_INITIAL_VALUES } from './pizza-selection.constants';
 
-type PizzaSelectionProps = {
+export type PizzaSelectionProps = {
 	[k: string]: unknown;
 };
 
