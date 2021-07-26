@@ -1,5 +1,6 @@
 import { createReducer, IGlobalState } from '@src/redux/reducers';
 import rootSaga from '@src/redux/sagas';
+import { history } from '@src/utils/history';
 import { routerMiddleware } from 'connected-react-router';
 import { History, LocationState } from 'history';
 import { createStore, applyMiddleware, compose, Middleware, Dispatch, Reducer, AnyAction, Store, StoreEnhancerStoreCreator } from 'redux';
@@ -16,7 +17,7 @@ interface IStoreInjection {
 
 export type InjectedStore = Store & IStoreInjection;
 
-export default (initialState: Record<string, unknown> = {}, history: History<LocationState>): InjectedStore => {
+const configureStore = (initialState: Record<string, unknown> = {}, history: History<LocationState>): InjectedStore => {
 	let composeEnhancers = compose;
 
 	// If Redux Dev Tools and Saga Dev Tools Extensions are installed, enable them
@@ -63,3 +64,7 @@ export default (initialState: Record<string, unknown> = {}, history: History<Loc
 
 	return injectedStore;
 };
+
+const initialState = {};
+
+export const store = configureStore(initialState, history);

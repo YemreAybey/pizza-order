@@ -68,7 +68,7 @@ const ImageComponent: string & StyledComponentBase<NamedExoticComponent, Default
 			}
 		}, [src]);
 
-		return <img alt={`pizza-${name ?? ''}`} src={lazySrc ?? require(`@src/images/${name}`)} {...props} loading="lazy" />;
+		return <img alt={`pizza-${name ?? ''}`} src={lazySrc || require(`@src/images/${name}`)} {...props} loading="lazy" />;
 	},
 )<IImageInterface>`
 	object-fit: contain;

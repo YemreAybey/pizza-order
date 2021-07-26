@@ -17,7 +17,7 @@ const RadioButton = ({ field: { name, value, onChange, onBlur }, id, label, ...p
 
 	return (
 		<div>
-			<input checked={id === value} id={id} name={name} onBlur={onBlur} onChange={handleChange} type="radio" value={id} {...props} />
+			<input checked={id === value} data-testid={id} id={id} name={name} onBlur={onBlur} onChange={handleChange} type="radio" value={id} {...props} />
 			<label htmlFor={id}>{label}</label>
 		</div>
 	);

@@ -23,7 +23,11 @@ const FormikField = ({ stretch, title, errors, touched, name, ml, ...props }: IF
 			</label>
 
 			<FormField bordercolor={errorMessage ? 'red' : 'rgba(57, 61, 67, 0.3)'} name={name} {...props} />
-			{errorMessage && <span style={{ fontSize: '12px', color: 'red' }}>{errors[name]}</span>}
+			{errorMessage && (
+				<span data-testid={'errorMessage'} style={{ fontSize: '12px', color: 'red' }}>
+					{errors[name]}
+				</span>
+			)}
 		</FormFieldContainer>
 	);
 };

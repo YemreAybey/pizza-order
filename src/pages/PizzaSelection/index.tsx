@@ -1,6 +1,5 @@
 import { Button, ButtonContainer } from '@src/components/Button';
 import CheckBox from '@src/components/CheckBox';
-import { LazyImage } from '@src/components/Image';
 import RadioButton from '@src/components/Radio';
 import { Text } from '@src/components/Text';
 import { setPizzaSelection } from '@src/pages/Order/order.actions';
@@ -33,7 +32,6 @@ const PizzaSelection: React.FC<PizzaSelectionProps> = () => {
 			<Text color={'darkGray'} fontSize={'x3Large'} textAlign={'center'}>
 				Select Pizza
 			</Text>
-			<LazyImage name="pizza.jpeg" />
 			<Formik<IPizzaSelectionForm>
 				enableReinitialize={true}
 				initialValues={PIZZA_SELECTION_INITIAL_VALUES}
@@ -49,10 +47,10 @@ const PizzaSelection: React.FC<PizzaSelectionProps> = () => {
 								<Field component={RadioButton} id="large" label="Large ($25)" name="pizzaType" />
 							</FormRow>
 							<FormRow>
-								<Field component={CheckBox} id="small" label="Olives (+$3)" name="olives" />
-								<Field component={CheckBox} id="medium" label="Pepperoni (+$4)" name="pepperoni" />
-								<Field component={CheckBox} id="large" label="Mushrooms (+$2)" name="mushrooms" />
-								<Field component={CheckBox} id="large" label="Peppers (+$2)" name="peppers" />
+								<Field component={CheckBox} id="olives" label="Olives (+$3)" name="olives" />
+								<Field component={CheckBox} id="pepperoni" label="Pepperoni (+$4)" name="pepperoni" />
+								<Field component={CheckBox} id="mushrooms" label="Mushrooms (+$2)" name="mushrooms" />
+								<Field component={CheckBox} id="peppers" label="Peppers (+$2)" name="peppers" />
 							</FormRow>
 						</TwoColumns>
 						<FormRow>
