@@ -1,9 +1,9 @@
 import path from 'path';
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
-import ESLintPlugin from 'eslint-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpack from 'webpack';
 
 const config: webpack.Configuration = {
 	mode: 'production',
@@ -29,6 +29,10 @@ const config: webpack.Configuration = {
 				test: /\.css$/,
 				exclude: /node_modules/,
 				use: ['style-loader', 'css-loader'],
+			},
+			{
+				test: /\.(s(a|c)ss)$/,
+				use: ['style-loader', 'css-loader', 'sass-loader'],
 			},
 
 			{

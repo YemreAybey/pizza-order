@@ -1,0 +1,11 @@
+build/
+node_modules/
+internals/
+coverage/
+nginx/
+package-lock.json
+yarn.lock
+package.json
+setUpTests.js
+.eslintrc.js
+tsconfig.json

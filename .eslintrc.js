@@ -13,7 +13,7 @@ module.exports = {
 		es2021: true,
 		serviceworker: true,
 	},
-	extends: ['plugin:react/recommended', 'prettier/@typescript-eslint', 'prettier', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
+	extends: ['plugin:react/recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		project: 'tsconfig.json',

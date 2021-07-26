@@ -1,8 +1,9 @@
 import path from 'path';
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 import ESLintPlugin from 'eslint-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpack from 'webpack';
 
 const config = {
 	mode: 'development',
@@ -29,7 +30,10 @@ const config = {
 				exclude: /node_modules/,
 				use: ['style-loader', 'css-loader'],
 			},
-
+			{
+				test: /\.(s(a|c)ss)$/,
+				use: ['style-loader', 'css-loader', 'sass-loader'],
+			},
 			{
 				test: /\.(eot|otf|ttf|woff|woff2|pdf|mp3)$/,
 				use: 'file-loader',
@@ -43,11 +47,14 @@ const config = {
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js'],
 		alias: {
-			'@src': path.resolve(__dirname, '../../src/'),
-			'@public': path.resolve(__dirname, '../../public/'),
+			'@src': path.resolve(__dirname, './src/'),
 		},
 	},
 	plugins: [
+		new Dotenv({
+			path: './.env', // Path to .env file (this is the default)
+			safe: true, // load .env.example (defaults to "false" which does not use dotenv-safe)
+		}),
 		new HtmlWebpackPlugin({
 			template: 'src/index.html',
 		}),
