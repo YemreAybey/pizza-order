@@ -52,6 +52,9 @@ const config: webpack.Configuration = {
 		},
 	},
 	plugins: [
+		new webpack.DefinePlugin({
+			'process.env.ENV': JSON.stringify('production'),
+		}),
 		new HtmlWebpackPlugin({
 			template: 'src/index.html',
 		}),
